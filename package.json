@@ -1,0 +1,23 @@
+{
+  "name": "Tarea-3-Distribuidos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JhonatanD09/Tarea-3-Distribuidos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JhonatanD09/Tarea-3-Distribuidos/issues"
+  },
+  "homepage": "https://github.com/JhonatanD09/Tarea-3-Distribuidos#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
