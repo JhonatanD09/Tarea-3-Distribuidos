@@ -16,8 +16,5 @@ module.exports =  function deleteUser( nameUser ){
         for (iterator in data){
             listModified.data.push(data[iterator])
         }
-        console.log(listModified)
         fs.writeFileSync('names.json', JSON.stringify(listModified))
-        console.log(JSON.stringify(listModified))
-        console.log(json)
 }

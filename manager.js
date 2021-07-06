@@ -7,11 +7,10 @@ const deletUser = require(__dirname+ "/delete.js")
 
 app.get("/", (req, res) => {
   res.send(JSON.parse(fs.readFileSync(__dirname + '/names.json')));
-  console.log()
+  
 })
 
 app.delete("/", (req,res)=>{
-  console.log("Hola")
   deletUser(req.query.name)
   res.send(JSON.parse(fs.readFileSync(__dirname+"/names.json")))
 })
