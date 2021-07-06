@@ -1,20 +1,14 @@
+const express = require('express');
+const router = express.Router();
+router.use(express.json());
 const fs = require('fs')
+const json = JSON.parse(fs.readFileSync(__dirname+"/names.json"))
 
+router.delete("/",(req,res)=>{
+    let i = json.data.indexOf(req.body.name) 
+    json.data.splice(i,1)
+    fs.writeFileSync("names.json", JSON.stringify(json));
+    res.send("ok");
+})
 
-module.exports =  function deleteUser( nameUser ){
-   
-    const json = JSON.parse(fs.readFileSync(__dirname+"/names.json"))
-    let data = json["data"]
-
-    let listModified = {
-        "data":[]
-    }
-
-    let i = data.indexOf( nameUser );
-    if(i>= 0)
-        data.splice( i, 1 );
-        for (iterator in data){
-            listModified.data.push(data[iterator])
-        }
-        fs.writeFileSync('names.json', JSON.stringify(listModified))
-}
+module.exports = router

@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
 router.use(express.json());
-'use strict'
 const fs = require('fs')
 
 router.get('/', (req, res)=>{
