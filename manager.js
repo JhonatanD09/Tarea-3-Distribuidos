@@ -1,13 +1,13 @@
 const express = require("express");
 const app = express();
 const port = 3000;
-'use strict'
 const fs = require('fs')
 const deletUser = require(__dirname+ "/delete.js")
+const getUsers = require(__dirname+ "/get.js")
+const postUsers = require(__dirname+ "/post.js")
+
 
 app.get("/", (req, res) => {
-  res.send(JSON.parse(fs.readFileSync(__dirname + '/names.json')));
-  
 })
 
 app.delete("/", (req,res)=>{
