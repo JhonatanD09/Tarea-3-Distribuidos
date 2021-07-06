@@ -1,6 +1,4 @@
-const express = require('express');
-const router = express.Router();
-router.use(express.json());
+const router = require("./Routes")
 const fs = require('fs')
 const json = JSON.parse(fs.readFileSync(__dirname+"/names.json"))
 

@@ -1,14 +1,16 @@
-const express = require('express');
-const router = express.Router();
-router.use(express.json());
+const router = require("./Routes");
 const fs = require('fs')
 const json = JSON.parse(fs.readFileSync(__dirname+"/names.json"))
 
 router.delete("/",(req,res)=>{
     let i = json.data.indexOf(req.body.name) 
-    json.data.splice(i,1)
-    fs.writeFileSync("names.json", JSON.stringify(json));
-    res.send("ok");
+    if (i>=0) {
+        json.data.splice(i,1)
+        fs.writeFileSync("names.json", JSON.stringify(json));
+        res.send("ok");
+    }else{
+        res.send("No existe el registro")
+    }
 })
 
 module.exports = router
